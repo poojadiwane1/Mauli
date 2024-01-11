@@ -34,7 +34,8 @@ import CoverFoxProject.SelectMemberWanted_POM;
 //test execution with base class, utility class, POm class and test class
 public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBase.BaseClass
  {
-	public static Logger logger;
+	//public static java.util.logging.Logger logger;
+	
 	//WebDriver driver ;
 	HomePage_POM  home ;
 	SelectMemberWanted_POM members ;
@@ -46,8 +47,8 @@ public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBa
 	
 	@BeforeClass
 	public void pririquisiteOfCoverFox() throws InterruptedException  {
-		logger= Logger.getLogger("My_New_log");
-		PropertyConfigurator.configure("Log4j.properties");
+		
+		//PropertyConfigurator.configure("Log4j.properties");
 		lunchBrowser();		
 		coverFoxUtility.ComUseMethod.ImplicitalyWait(driver, 5);
 		//driver=new ChromeDriver();
