@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="lissner.ExtentReporterNG"></listener>
+	    <listener class-name="lissner.lisenerA"></listener>
+	</listeners>
+  <test thread-count="5" name="CoverFox2">
+    <classes>
+      <class name="coverFoxTest.varify_coverFox_massege_equalTo_displayed_banner"/>
+    </classes>
+  </test> <!-- CoverFox2 -->
+</suite> <!-- Suite -->
