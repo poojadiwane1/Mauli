@@ -8,7 +8,7 @@ package coverFoxTest;
 
 import java.io.IOException;
 
-import org.apache.log4j.PropertyConfigurator;
+//import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.EncryptedDocumentException;
 
 import org.testng.Assert;
@@ -19,7 +19,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.mongodb.diagnostics.logging.Logger;
+
 
 import CoverFoxProject.AddressDetails_POM;
 import CoverFoxProject.AgeSelection_POM;
@@ -34,7 +34,7 @@ import CoverFoxProject.SelectMemberWanted_POM;
 //test execution with base class, utility class, POm class and test class
 public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBase.BaseClass
  {
-	//public static java.util.logging.Logger logger;
+	//public static org.apache.log4j.Logger logger;
 	
 	//WebDriver driver ;
 	HomePage_POM  home ;
@@ -47,8 +47,11 @@ public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBa
 	
 	@BeforeClass
 	public void pririquisiteOfCoverFox() throws InterruptedException  {
+		//logger = org.apache.log4j.Logger.getLogger("CoverFoxInsurance");
+		//  PropertyConfigurator.configure("log4j.properties");
+		 // logger.info("lunching cover fox browser");
+		 // logger.error("please select browser of cover fox");
 		
-		//PropertyConfigurator.configure("Log4j.properties");
 		lunchBrowser();		
 		coverFoxUtility.ComUseMethod.ImplicitalyWait(driver, 5);
 		//driver=new ChromeDriver();
@@ -67,19 +70,21 @@ public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBa
 		@BeforeMethod
 		public void details() throws InterruptedException, EncryptedDocumentException, IOException    {
 			
-			
+		//	logger.info("opening home page");
 			home.SelectGender();
 			Thread.sleep(2000);
-			
+			//logger.info("adding members");
 			members.next();
 			
 			Thread.sleep(1000);
 			//here Age data is alredy predeclare inside POM class
+			//logger.info("adding age");
 			age.selectAge();
 			Thread.sleep(1000);
 			age.next();
 			Thread.sleep(2000);
 			//here data for pine code pick up through exel file
+			//logger.info("adding address");
 			address.code("443101");
 			Thread.sleep(2000);
 			//here data for mobile no is pick up from property file
@@ -101,6 +106,7 @@ public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBa
 			int banner = result.bannerResult();
 			
 			Reporter.log("validating actual and expected result", true);
+			//logger.info("validating actual and expected result");
 			Assert.assertEquals(text, banner, "TC Failed : actual and expected result is not true" );
 			Thread.sleep(1000);
 			
