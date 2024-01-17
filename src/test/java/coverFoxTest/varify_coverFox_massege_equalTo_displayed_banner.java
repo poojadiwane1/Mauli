@@ -110,6 +110,8 @@ public class varify_coverFox_massege_equalTo_displayed_banner extends coverFoxBa
 			Assert.assertEquals(text, banner, "TC Failed : actual and expected result is not true" );
 			Thread.sleep(1000);
 			
+			System.out.println("closing browser");
+			
 			//coverFoxUtility.ComUseMethod.takeScreenShotWithDate(driver, "TCID");
 			//Thread.sleep(2000);
 		}
